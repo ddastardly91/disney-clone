@@ -40,7 +40,9 @@ export default Header
 
 const Nav = styled.nav`
     height: 70px;
-    background: #090b13;
+    background: rgba(9, 11, 19, 0.35);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
     padding: 0 30px;

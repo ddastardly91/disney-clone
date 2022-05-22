@@ -1,23 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 function Movies() {
     return (
         <Container>
             <h4>Recommended For You</h4>
             <Content>
-                <Wrap>
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/3CCE3C67240CCED70FD7DB26B3EB62B762ABDD3835CCAACEDC670FC0EB907C3F/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4D81CFC0AB36129E290B4A78224FBD4CE0FC6FFABF59539B0FDD9D844F25EBA4/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4D7257D43A0A61CC9F2DB2DE4670DC8D9D1F85BC7E6C84F3D066792965E00C2E/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                </Wrap>
+                <Link to="/detail">
+                    <Wrap>
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/3CCE3C67240CCED70FD7DB26B3EB62B762ABDD3835CCAACEDC670FC0EB907C3F/scale?width=400&aspectRatio=1.78&format=jpeg" />
+                    </Wrap>
+                </Link>
+                <Link to="/detail">
+                    <Wrap>
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4D81CFC0AB36129E290B4A78224FBD4CE0FC6FFABF59539B0FDD9D844F25EBA4/scale?width=400&aspectRatio=1.78&format=jpeg" />
+                    </Wrap>
+                </Link>
+                <Link to="/detail">
+                    <Wrap>
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4D7257D43A0A61CC9F2DB2DE4670DC8D9D1F85BC7E6C84F3D066792965E00C2E/scale?width=400&aspectRatio=1.78&format=jpeg" />
+                    </Wrap>
+                </Link>
+                <Link to="/detail">
+                    <Wrap>
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg" />
+                    </Wrap>
+                </Link>
             </Content>
         </Container>
     )

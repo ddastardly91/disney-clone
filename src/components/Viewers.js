@@ -67,8 +67,9 @@ const Wrap = styled.div`
 
     &:hover {
         box-shadow: rgb(0 0 0 / 80%) 0 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
-        transform: scale(1.2);
+        transform: scale(1.1);
         border-color: rgba(249, 249, 249, 0.8);
+        z-index: 10;
     }
 
 `

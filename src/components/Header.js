@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { auth, provider } from '../firebase';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom';
 import {
     selectUserName,
     selectUserPhoto,
@@ -62,10 +62,12 @@ function Header() {
             ) :
                 <>
                     <NavMenu>
-                        <a>
-                            <img src="/images/home-icon.svg" />
-                            <span>HOME</span>
-                        </a>
+                        <Link to="/home">
+                            <a>
+                                <img src="/images/home-icon.svg" />
+                                <span>HOME</span>
+                            </a>
+                        </Link>
                         <a >
                             <img src="/images/search-icon.svg" />
                             <span>SEARCH</span>

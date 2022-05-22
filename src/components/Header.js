@@ -24,7 +24,7 @@ function Header() {
                     email: user.email,
                     photo: user.photoURL
                 }))
-                history.push('/')
+                history.push('/home')
             }
         })
     }, [])
@@ -40,7 +40,7 @@ function Header() {
 
                 }))
 
-                history.push("/")
+                history.push("/home")
             })
     }
 
@@ -48,7 +48,7 @@ function Header() {
         auth.signOut()
             .then(() => {
                 dispatch(setSignOut())
-                history.push("/login");
+                history.push("/");
             })
     }
 

@@ -43,10 +43,10 @@ export default Viewers
 
 const Container = styled.div`
     margin-top: 30px;
-    display: grid;
-    grid-gap: 25px;
+    display: flex;
     padding: 30px 0 26px;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-content: space-between;
+    
 `
 
 const Wrap = styled.div`

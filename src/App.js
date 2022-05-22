@@ -14,7 +14,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router forceRefresh={true}>
         <Header />
         <Switch>
           <Route path="/login">

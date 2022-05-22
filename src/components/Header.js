@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { auth, provider } from '../firebase';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom'
@@ -16,6 +16,19 @@ function Header() {
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
 
+    useEffect(() => {
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                dispatch(setUserLogin({
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
+                }))
+                history.push('/')
+            }
+        })
+    }, [])
+
     const signIn = () => {
         auth.signInWithPopup(provider)
             .then((result) => {
@@ -23,8 +36,11 @@ function Header() {
                 dispatch(setUserLogin({
                     name: user.displayName,
                     email: user.email,
-                    photo: user.photoURL
+                    photo: user.photoURL,
+
                 }))
+
+                history.push("/")
             })
     }
 
@@ -71,9 +87,11 @@ function Header() {
                             <span>SERIES</span>
                         </a>
                     </NavMenu>
-                    <UserImg
-                        onClick={signOut}
-                        src="https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=562" />
+                    <Wrap onClick={signOut}>
+                        {userName}
+                        <UserImg
+                            src={userPhoto} />
+                    </Wrap>
                 </>
             }
 
@@ -152,6 +170,7 @@ const UserImg = styled.img`
     height: 48px;
     border-radius: 50%;
     cursor: pointer;
+    margin-left: 10px;
 `
 
 const Login = styled.div`
@@ -175,4 +194,10 @@ const LoginContainer = styled.div`
     flex: 1;
     display: flex;
     justify-content: flex-end;
+`;
+
+const Wrap = styled.div`
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 `;
